@@ -254,7 +254,7 @@ export default function Navbar({ dark, setDark }) {
       {/* =====================================================
           MOBILE MENU
       ====================================================== */}
-{/* 
+
       <div
         className={`
           mx-4
@@ -345,7 +345,7 @@ export default function Navbar({ dark, setDark }) {
 
           </div>
         </div>
-      </div> */}
+      </div>
     </header>
   );
 }
