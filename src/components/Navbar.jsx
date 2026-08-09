@@ -148,10 +148,10 @@ export default function Navbar({ dark, setDark }) {
             DESKTOP ACTIONS
         ====================================================== */}
 
-        {/* <div className="hidden items-center gap-3 lg:flex"> */}
+        <div className="hidden items-center gap-3 lg:flex">
 
           {/* Dark mode */}
-          {/* <button
+          <button
             aria-label="Toggle dark mode"
             onClick={() => setDark((d) => !d)}
             className={`
@@ -185,7 +185,7 @@ export default function Navbar({ dark, setDark }) {
             ) : (
               <Moon className="h-4 w-4" />
             )}
-          </button> */}
+          </button>
 
 
           {/* Login */}
@@ -214,7 +214,7 @@ export default function Navbar({ dark, setDark }) {
             Register
           </Button> */}
 
-        {/* </div> */}
+        </div>
 
 
         {/* =====================================================
