@@ -221,7 +221,7 @@ export default function Navbar({ dark, setDark }) {
             MOBILE MENU BUTTON
         ====================================================== */}
 
-        {/* <button
+        <button
           className={`
             grid
             h-9
@@ -246,7 +246,7 @@ export default function Navbar({ dark, setDark }) {
           ) : (
             <Menu className="h-5 w-5" />
           )}
-        </button> */}
+        </button>
 
       </div>
 
