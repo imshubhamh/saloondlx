@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: #fffcf6;
+  --c-surface: #ffffff;
+  --c-ink: #1c1210;
+  --c-muted: #78716c;
+  --c-border: #f0e4cf;
+  --c-primary: #dc2626;
+  --c-secondary: #450a0a;
+  --c-accent: #f59e0b;
+}
+
+.dark {
+  --c-bg: #170a06;
+  --c-surface: #241209;
+  --c-ink: #fdf6e9;
+  --c-muted: #c9b8a0;
+  --c-border: #3a2415;
+  --c-primary: #ef4444;
+  --c-secondary: #0d0402;
+  --c-accent: #fbbf24;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-ink);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* utility classes referencing the theme variables so Tailwind's
+   arbitrary-value syntax (bg-[--c-primary] etc.) resolves correctly */
+.bg-theme-bg { background-color: var(--c-bg); }
+.bg-theme-surface { background-color: var(--c-surface); }
+.text-theme-ink { color: var(--c-ink); }
+.text-theme-muted { color: var(--c-muted); }
+.border-theme { border-color: var(--c-border); }
+
+.hero-glow {
+  background: radial-gradient(
+      60% 50% at 15% 0%,
+      color-mix(in srgb, var(--c-primary) 14%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 40% at 90% 10%,
+      color-mix(in srgb, var(--c-accent) 16%, transparent),
+      transparent 60%
+    );
+}
+
+.cta-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    60% 80% at 50% 0%,
+    color-mix(in srgb, var(--c-accent) 22%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1.5px;
+  width: 0;
+  background: var(--c-primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.testimonial-track {
+  scroll-snap-type: x proximity;
+}
+.testimonial-track > * {
+  scroll-snap-align: start;
+}
+.testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
