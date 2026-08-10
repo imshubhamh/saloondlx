@@ -14,11 +14,11 @@ export default function MainLayout() {
 
   return (
     <div className="min-h-screen bg-[--c-bg] font-sans text-[--c-ink] antialiased">
-      <Navbar dark={dark} setDark={setDark} />
+      {/* <Navbar dark={dark} setDark={setDark} /> */}
       <main>
         <Outlet />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
